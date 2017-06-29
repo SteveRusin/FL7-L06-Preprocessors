@@ -1,0 +1,89 @@
+@import "mixins";
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font: $bodyFont;
+}
+
+body {
+    background-color: $bodyColor;
+}
+
+a {
+    color: $link;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+#content {
+    background-color: $contentColor;
+    margin: 25px 75px;
+    padding: 25px;
+    h1 {
+        color: $h1Color;
+        margin-bottom: 25px;
+    }
+    h2 {
+        font-weight: normal;
+        color: $h2Color;
+        font-style: $fontStyleI;
+        margin-top: 50px;
+    }
+    p, table, .brief {
+        color: $textColor;
+    }
+    img {
+        padding: $imgPadding;
+        border: $imgBorder solid $borderColor;
+        background-color: $contentColor;
+    }
+    .img-left {
+        @include float(left, 0 25px 15px 0);
+    }
+    .brief,
+    caption {
+        font-style: italic;
+        font-weight: $fontWeight;
+    }
+    .brief {
+        @include float($floatBrief, 0 25px 15px 0);
+        background-color: $briefColor;
+        width: $briefWidth;
+        padding: 15px;
+    }
+    .img-right {
+        @include float(right, 0 0 15px 25px);
+    }
+    table {
+        margin-top: 40px;
+    }
+    table,
+    th,
+    td,
+    caption {
+        padding: 10px 15px;
+    }
+    table {
+        border-collapse: collapse;
+    }
+    caption {
+        text-align: right;
+    }
+    th {
+        text-align: left;
+        background-color: $thTableBG;
+        border-left: 1px solid $thTableBD;
+    }
+    th:first-child {
+        border-left: none;
+    }
+    td {
+        background-color: $tdBG;
+        border-bottom: 2px solid $borderTable;
+    }
+}
